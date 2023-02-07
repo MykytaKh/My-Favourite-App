@@ -15,7 +15,7 @@ class Model {
         self.networkService = networkService
     }
     
-    func fetchData() async -> [SomeData]? {
-        return await networkService.fetchData()
+    func fetchData() async throws -> [SomeData] {
+        try await networkService.fetchData()
     }
 }

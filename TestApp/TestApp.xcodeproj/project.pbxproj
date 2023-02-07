@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965A35CE299179AB0072CFC5 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965A35CD299179AB0072CFC5 /* NetworkServiceError.swift */; };
 		96B537252982FF7D004365B9 /* TestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B537242982FF7D004365B9 /* TestAppApp.swift */; };
 		96B537272982FF7D004365B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B537262982FF7D004365B9 /* ContentView.swift */; };
 		96B537292982FF7E004365B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B537282982FF7E004365B9 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		965A35CD299179AB0072CFC5 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		96B537212982FF7D004365B9 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B537242982FF7D004365B9 /* TestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppApp.swift; sourceTree = "<group>"; };
 		96B537262982FF7D004365B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		965A35CF29919D190072CFC5 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				96B537322982FFB8004365B9 /* NetworkService.swift */,
+				965A35CD299179AB0072CFC5 /* NetworkServiceError.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		96B537182982FF7D004365B9 = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +79,9 @@
 				96B5373C29830F75004365B9 /* FavouriteDataView.swift */,
 				96B5373629830567004365B9 /* ViewModel.swift */,
 				96B5373829830775004365B9 /* Model.swift */,
-				96B537322982FFB8004365B9 /* NetworkService.swift */,
-				96B537342982FFF9004365B9 /* TvShow .swift */,
 				96B5373A2983092F004365B9 /* FavouriteData.swift */,
+				96B537342982FFF9004365B9 /* TvShow .swift */,
+				965A35CF29919D190072CFC5 /* NetworkService */,
 				96B537282982FF7E004365B9 /* Assets.xcassets */,
 				96B5372A2982FF7E004365B9 /* Preview Content */,
 			);
@@ -161,6 +172,7 @@
 				96B537332982FFB8004365B9 /* NetworkService.swift in Sources */,
 				96B5373929830775004365B9 /* Model.swift in Sources */,
 				96B537252982FF7D004365B9 /* TestAppApp.swift in Sources */,
+				965A35CE299179AB0072CFC5 /* NetworkServiceError.swift in Sources */,
 				96B5373D29830F75004365B9 /* FavouriteDataView.swift in Sources */,
 				96B537352982FFF9004365B9 /* TvShow .swift in Sources */,
 			);
@@ -308,6 +320,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = khlamov.mykyta.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -337,6 +352,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = khlamov.mykyta.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -18,17 +18,13 @@ class ViewModel {
     
     func loadButtonTapped() {
         Task {
-            await fetchData()
+            try await fetchData()
         }
     }
     
-    func fetchData() async -> [FavouriteData] {
-        if let data = await model.networkService.fetchData() {
-            return data.map { data in
-                FavouriteData(id: data.id, name: data.name, summary: data.summary)
-            }
-        } else {
-            return []
+    func fetchData() async throws -> [FavouriteData] {
+        try await model.networkService.fetchData().map { data in
+            FavouriteData(id: data.id, name: data.name, summary: data.summary)
         }
     }
     

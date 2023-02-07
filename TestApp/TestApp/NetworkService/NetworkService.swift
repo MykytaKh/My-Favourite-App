@@ -10,7 +10,7 @@ import Foundation
 protocol NetworkServiceProtocol {
     var urlString: String { get set }
     
-    func fetchData() async -> [SomeData]?
+    func fetchData() async throws -> [SomeData]
 }
 
 class NetworkService: NetworkServiceProtocol {
@@ -21,19 +21,15 @@ class NetworkService: NetworkServiceProtocol {
         self.urlString = urlString
     }
     
-    func fetchData() async -> [SomeData]? {
-        guard let url = URL(string: urlString) else { return nil }
+    func fetchData() async throws -> [SomeData] {
+        guard let url = URL(string: urlString) else { throw NetworkServiceError.invalidUrl }
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             
-            if let decodedResponse = try? JSONDecoder().decode([TvShow].self, from: data) {
-                return decodedResponse
-            } else {
-                return nil
-            }
+            return try JSONDecoder().decode([TvShow].self, from: data)
         } catch {
-            return nil
+            throw error
         }
     }
     

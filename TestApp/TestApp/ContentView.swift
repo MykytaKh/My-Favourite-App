@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private var viewModel: ViewModel = ViewModel()
+    private var viewModel = ViewModel()
     @State private var favouriteData: [FavouriteData] = []
     @State private var isFiltered = false
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         NavigationView {
@@ -62,6 +64,7 @@ struct ContentView: View {
                     })
                 }
             }
+            .alert("Error", isPresented: $showingAlert, actions: {}, message: { Text(alertMessage) })
             .navigationTitle("TV Shows")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -69,7 +72,12 @@ struct ContentView: View {
     
     private func LoadButtonTapped() {
         Task {
-            favouriteData = await viewModel.fetchData()
+            do {
+                favouriteData = try await viewModel.fetchData()
+            } catch {
+                alertMessage = error.localizedDescription + "\nPlease try again."
+                showingAlert.toggle()
+            }
         }
     }
     
