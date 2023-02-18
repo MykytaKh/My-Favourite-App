@@ -14,9 +14,9 @@
 		96B5372C2982FF7E004365B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B5372B2982FF7E004365B9 /* Preview Assets.xcassets */; };
 		96B537332982FFB8004365B9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B537322982FFB8004365B9 /* NetworkService.swift */; };
 		96B537352982FFF9004365B9 /* TvShow .swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B537342982FFF9004365B9 /* TvShow .swift */; };
-		96B5373729830567004365B9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5373629830567004365B9 /* ViewModel.swift */; };
+		96B5373729830567004365B9 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5373629830567004365B9 /* ContentView-ViewModel.swift */; };
 		96B5373929830775004365B9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5373829830775004365B9 /* Model.swift */; };
-		96B5373B2983092F004365B9 /* FavouriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5373A2983092F004365B9 /* FavouriteData.swift */; };
+		96B5373B2983092F004365B9 /* FavouriteTvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5373A2983092F004365B9 /* FavouriteTvShow.swift */; };
 		96B5373D29830F75004365B9 /* FavouriteDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5373C29830F75004365B9 /* FavouriteDataView.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +29,9 @@
 		96B5372B2982FF7E004365B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		96B537322982FFB8004365B9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		96B537342982FFF9004365B9 /* TvShow .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TvShow .swift"; sourceTree = "<group>"; };
-		96B5373629830567004365B9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		96B5373629830567004365B9 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		96B5373829830775004365B9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		96B5373A2983092F004365B9 /* FavouriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteData.swift; sourceTree = "<group>"; };
+		96B5373A2983092F004365B9 /* FavouriteTvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTvShow.swift; sourceTree = "<group>"; };
 		96B5373C29830F75004365B9 /* FavouriteDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +55,15 @@
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
+		9680C98029927C2B00818DFC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				96B537342982FFF9004365B9 /* TvShow .swift */,
+				96B5373A2983092F004365B9 /* FavouriteTvShow.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		96B537182982FF7D004365B9 = {
 			isa = PBXGroup;
 			children = (
@@ -75,12 +84,11 @@
 			isa = PBXGroup;
 			children = (
 				96B537242982FF7D004365B9 /* TestAppApp.swift */,
-				96B537262982FF7D004365B9 /* ContentView.swift */,
 				96B5373C29830F75004365B9 /* FavouriteDataView.swift */,
-				96B5373629830567004365B9 /* ViewModel.swift */,
+				96B537262982FF7D004365B9 /* ContentView.swift */,
+				96B5373629830567004365B9 /* ContentView-ViewModel.swift */,
 				96B5373829830775004365B9 /* Model.swift */,
-				96B5373A2983092F004365B9 /* FavouriteData.swift */,
-				96B537342982FFF9004365B9 /* TvShow .swift */,
+				9680C98029927C2B00818DFC /* Entities */,
 				965A35CF29919D190072CFC5 /* NetworkService */,
 				96B537282982FF7E004365B9 /* Assets.xcassets */,
 				96B5372A2982FF7E004365B9 /* Preview Content */,
@@ -166,9 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B5373729830567004365B9 /* ViewModel.swift in Sources */,
+				96B5373729830567004365B9 /* ContentView-ViewModel.swift in Sources */,
 				96B537272982FF7D004365B9 /* ContentView.swift in Sources */,
-				96B5373B2983092F004365B9 /* FavouriteData.swift in Sources */,
+				96B5373B2983092F004365B9 /* FavouriteTvShow.swift in Sources */,
 				96B537332982FFB8004365B9 /* NetworkService.swift in Sources */,
 				96B5373929830775004365B9 /* Model.swift in Sources */,
 				96B537252982FF7D004365B9 /* TestAppApp.swift in Sources */,

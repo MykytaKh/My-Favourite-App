@@ -17,7 +17,7 @@ class NetworkService: NetworkServiceProtocol {
     
     var urlString: String
     
-    init(urlString: String) {
+    init(urlString: String = "https://api.tvmaze.com/shows") {
         self.urlString = urlString
     }
     

@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  TvShow.swift
 //  TestApp
 //
 //  Created by Mykyta Khlamov on 26.01.2023.

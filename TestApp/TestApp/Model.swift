@@ -7,11 +7,17 @@
 
 import Foundation
 
-class Model {
+protocol ModelProtocol {
+    var networkService: NetworkServiceProtocol { get set }
+    
+    func fetchData() async throws -> [SomeData]
+}
+
+final class Model: ModelProtocol {
     
     var networkService: NetworkServiceProtocol
     
-    init(networkService: NetworkServiceProtocol) {
+    init(networkService: NetworkServiceProtocol = NetworkService()) {
         self.networkService = networkService
     }
     
