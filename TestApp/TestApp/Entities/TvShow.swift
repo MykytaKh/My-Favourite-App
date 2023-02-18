@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SomeData: Codable {
+protocol SomeData: Decodable {
     var id: Int { get set }
     var name: String { get set }
     var summary: String { get set }

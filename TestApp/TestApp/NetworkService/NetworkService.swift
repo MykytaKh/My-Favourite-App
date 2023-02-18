@@ -27,7 +27,9 @@ class NetworkService: NetworkServiceProtocol {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             
-            return try JSONDecoder().decode([TvShow].self, from: data)
+            let decoded = try JSONDecoder().decode(TvShowsResponse.self, from: data)
+            
+            return decoded.results
         } catch {
             throw error
         }
