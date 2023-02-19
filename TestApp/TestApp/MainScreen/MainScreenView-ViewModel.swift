@@ -1,5 +1,5 @@
 //
-//  ContentView-ViewModel.swift
+//  MainScreenView-ViewModel.swift
 //  TestApp
 //
 //  Created by Mykyta Khlamov on 26.01.2023.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension ContentView {
+extension MainScreenView {
     
-    @MainActor final class ViewModel: ObservableObject {
+    @MainActor final class MainScreenViewModel: ObservableObject {
         
         @Published var favouriteData: [FavouriteData] = []
         @Published var isFiltered = false

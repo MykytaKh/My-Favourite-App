@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainScreenView.swift
 //  TestApp
 //
 //  Created by Mykyta Khlamov on 26.01.2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainScreenView: View {
     
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var viewModel = MainScreenViewModel()
     
     var body: some View {
         NavigationView {
@@ -70,6 +70,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainScreenView()
     }
 }
