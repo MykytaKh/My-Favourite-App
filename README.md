@@ -1,4 +1,4 @@
-# TestApp
+# My Favourite App
 Create an app in three hours.
 
 Requirements
