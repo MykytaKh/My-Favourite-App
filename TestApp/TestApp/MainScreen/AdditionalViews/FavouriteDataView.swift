@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FavouriteDataView: View {
+    
     @Binding var favouriteData: FavouriteData
     
     var body: some View {
@@ -15,19 +16,14 @@ struct FavouriteDataView: View {
         VStack(alignment: .center) {
             HStack {
                 Text(favouriteData.name)
-                    .font(.headline)
-                    .foregroundColor(Color("TitleTextColor"))
-                Image(systemName: favouriteData.favourite ? "star.fill" : "star")
-                    .foregroundColor(.yellow)
-                    .onTapGesture {
-                        favouriteData.favourite.toggle()
-                    }
+                    .modifier(TitleTextModifier())
+                FavouriteButton(isFavourite: favouriteData.isFavourite) { favouriteData.isFavourite.toggle() }
             }
             
             TextEditor(text: $favouriteData.summary)
-                .foregroundColor(.secondary)
+                .modifier(SummaryTextModifier())
                 .padding(.horizontal)
         }
-        
     }
+    
 }

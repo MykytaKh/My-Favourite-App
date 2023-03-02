@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol SomeData {
+protocol SomeData: Decodable {
     var id: Int { get set }
     var name: String { get set }
     var summary: String { get set }
 }
 
-struct TvShow: SomeData, Decodable {
+struct TvShow: SomeData {
     var id: Int
     var name: String
     var summary: String

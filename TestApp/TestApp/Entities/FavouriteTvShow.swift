@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol FavouriteData: SomeData {
-    var favourite: Bool { get set }
+protocol FavouriteData: SomeData, Encodable {
+    var isFavourite: Bool { get set }
 }
 
 struct FavouriteTvShow: FavouriteData {
@@ -16,14 +16,14 @@ struct FavouriteTvShow: FavouriteData {
     var id: Int
     var name: String
     @ClearString var summary: String
-    var favourite: Bool = false
+    var isFavourite: Bool = false
 
 }
 
 @propertyWrapper
-struct ClearString {
+struct ClearString: Codable {
     private var string: String = ""
-    private let substringsToRemove = ["<p>", "</p>", "<b>", "</b>", "<i>", "</i>"]
+    private var substringsToRemove = ["<p>", "</p>", "<b>", "</b>", "<i>", "</i>"]
     
     var wrappedValue: String {
         get { string }

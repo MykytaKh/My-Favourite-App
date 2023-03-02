@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  MainScreenModel.swift
 //  TestApp
 //
 //  Created by Mykyta Khlamov on 26.01.2023.
@@ -13,7 +13,7 @@ protocol ModelProtocol {
     func fetchData() async throws -> [SomeData]
 }
 
-final class Model: ModelProtocol {
+final class MainScreenModel: ModelProtocol {
     
     var networkService: NetworkServiceProtocol
     

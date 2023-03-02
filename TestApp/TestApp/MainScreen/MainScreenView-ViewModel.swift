@@ -11,14 +11,17 @@ extension MainScreenView {
     
     @MainActor final class MainScreenViewModel: ObservableObject {
         
-        @Published var favouriteData: [FavouriteData] = []
+        @Published var favouriteData: [FavouriteData]
         @Published var isFiltered = false
         @Published var showingAlert = false
         @Published var alertMessage = ""
         private let model: ModelProtocol
+        private let storage: FavouriteDataStorage
         
-        init(model: ModelProtocol = Model()) {
+        init(model: ModelProtocol = MainScreenModel(), storage: FavouriteDataStorage = FavouriteTvShowsStorage()) {
             self.model = model
+            self.storage = storage
+            favouriteData = storage.getFavouriteData()
         }
         
         func loadButtonTapped() {
@@ -27,6 +30,23 @@ extension MainScreenView {
         
         func onlyFavouriteButtonTapped() {
             isFiltered.toggle()
+        }
+        
+        func getFavouriteIndex(for id: Int) -> Int {
+            favouriteData.firstIndex(where: { $0.id == id }) ?? 0
+        }
+        
+        func changeFavourite(for id: Int) {
+            guard let index = favouriteData.firstIndex(where: { $0.id == id }) else { return }
+            favouriteData[index].isFavourite.toggle()
+        }
+        
+        func saveFavouriteData() {
+            do {
+                try storage.saveFavouriteData(favouriteData)
+            } catch {
+                showError(description: error.localizedDescription)
+            }
         }
         
         private func fetchData() async {
@@ -45,5 +65,4 @@ extension MainScreenView {
         }
         
     }
-    
 }
