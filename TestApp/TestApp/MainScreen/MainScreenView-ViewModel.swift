@@ -16,12 +16,10 @@ extension MainScreenView {
         @Published var showingAlert = false
         @Published var alertMessage = ""
         private let model: ModelProtocol
-        private let storage: FavouriteDataStorage
         
-        init(model: ModelProtocol = MainScreenModel(), storage: FavouriteDataStorage = FavouriteTvShowsStorage()) {
+        init(model: ModelProtocol = MainScreenModel()) {
             self.model = model
-            self.storage = storage
-            favouriteData = storage.getFavouriteData()
+            favouriteData = model.getFavouriteData()
         }
         
         func loadButtonTapped() {
@@ -41,19 +39,19 @@ extension MainScreenView {
             favouriteData[index].isFavourite.toggle()
         }
         
-        func saveFavouriteData() {
+        private func fetchData() async {
             do {
-                try storage.saveFavouriteData(favouriteData)
+                favouriteData = try await model.fetchData().map { data in
+                    FavouriteTvShow(id: data.id, name: data.name, summary: data.summary)
+                }
             } catch {
                 showError(description: error.localizedDescription)
             }
         }
         
-        private func fetchData() async {
+        func saveFavouriteData() {
             do {
-                favouriteData = try await model.networkService.fetchData().map { data in
-                    FavouriteTvShow(id: data.id, name: data.name, summary: data.summary)
-                }
+                try model.saveFavouriteData(favouriteData)
             } catch {
                 showError(description: error.localizedDescription)
             }

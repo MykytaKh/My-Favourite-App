@@ -14,14 +14,14 @@ extension FileManager {
     }
 }
 
-protocol FavouriteDataStorage {
+protocol FavouriteDataStorageProtocol {
     var savePath: URL { get }
     
     func saveFavouriteData(_ favouriteData: [FavouriteData]) throws
     func getFavouriteData() -> [FavouriteData]
 }
 
-final class FavouriteTvShowsStorage: FavouriteDataStorage {
+final class FavouriteTvShowsStorage: FavouriteDataStorageProtocol {
     
     let savePath: URL = FileManager.documentsDirectory.appendingPathComponent("SavedFavouriteTvShows")
     
