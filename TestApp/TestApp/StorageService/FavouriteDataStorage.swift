@@ -26,12 +26,8 @@ final class FavouriteTvShowsStorage: FavouriteDataStorageProtocol {
     let savePath: URL = FileManager.documentsDirectory.appendingPathComponent("SavedFavouriteTvShows")
     
     func saveFavouriteData(_ favouriteData: [FavouriteData]) throws {
-        do {
-            let data = try JSONEncoder().encode(favouriteData as? [FavouriteTvShow])
-            try data.write(to: savePath, options: [.atomicWrite, .completeFileProtection])
-        } catch {
-            throw error
-        }
+        let data = try JSONEncoder().encode(favouriteData as? [FavouriteTvShow])
+        try data.write(to: savePath, options: [.atomicWrite, .completeFileProtection])
     }
     
     func getFavouriteData() -> [FavouriteData] {
