@@ -30,3 +30,5 @@ Bonus tasks:
 - save the app state (data with favourite state) to some persistence storage (offline or online) to not erase the data after the next launch
 
 - support light and dark themes
+
+- consider adding some tests
